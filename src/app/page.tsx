@@ -1,9 +1,13 @@
+import getPhotos from '@/actions/photos-get';
+import Feed from '@/components/feed/feed';
 
+export default async function Home() {
+  const data = await getPhotos();
 
-export default function Home() {
   return (
     <section className="container mainContainer">
       <h1 className="title">Dogs Next</h1>
+      <Feed photos={data} />
     </section>
   );
 }
